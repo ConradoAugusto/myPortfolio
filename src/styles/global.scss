@@ -1,0 +1,25 @@
+:root {
+  --Color-primary: #002423;
+  --Color-secundary: #8fbc8f;
+
+  // Text
+  --Color-white: #ffffff;
+}
+
+body {
+  background-color: var(--Color-primary);
+  color: var(--Color-white);
+  font-family: "Inter", sans-serif;
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.toast {
+    width: 100px;
+    height: 30px;
+}

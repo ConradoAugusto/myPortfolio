@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    
+    img {
+        width: 100px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      a {
+        cursor: pointer;
+      }
+    }
+
+}
