@@ -12,9 +12,9 @@ export const Header = () => {
 
         <Link to={"/"}><span className="secundaryColor">//</span> Home</Link>
 
-        <Link to={"/about"}><span className="secundaryColor">//</span> Sobre</Link>
+        <Link to={"#"}><span className="secundaryColor">//</span> Sobre</Link>
 
-        <Link to={"/works"}><span className="secundaryColor">//</span> Projetos</Link>
+        <Link to={"#"}><span className="secundaryColor">//</span> Projetos</Link>
         <li>
         <a href="mailto:conras.augusto@gmail.com?subject=Vamos trabalhar juntos?"><span className="secundaryColor">//</span> Contato</a>
         </li>

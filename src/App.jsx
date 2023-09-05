@@ -1,6 +1,4 @@
 import { RouterMain } from "./Routes/RouterMain";
-import { Footer } from "./componets/Footer";
-import { Header } from "./componets/Header";
 
 
 
@@ -8,11 +6,9 @@ import { Header } from "./componets/Header";
 
 
   return (
-    <main>
-      <Header />
+    <>
       <RouterMain/>
-      <Footer />
-    </main>
+    </>
   );
 }
 

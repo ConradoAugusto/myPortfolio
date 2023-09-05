@@ -6,6 +6,7 @@
     
     img {
         width: 100px;
+        animation: border 10s infinite ;
     }
 
     nav {
@@ -18,4 +19,18 @@
       }
     }
 
+}
+
+@keyframes border {
+ 0% {
+    filter: drop-shadow(2px 1px 1px #ffffff42);
+  }
+
+  50% {
+    filter: drop-shadow(2px 1px 4px #ffffff42);
+  }
+
+  100% {
+    filter: drop-shadow(2px 1px 1px #ffffff42);
+  }
 }
