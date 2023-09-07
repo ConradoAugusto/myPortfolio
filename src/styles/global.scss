@@ -6,13 +6,63 @@
   --Color-white: #ffffff;
 }
 
+.opening {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  z-index: 999;
+
+  position: fixed;
+  inset: 0;
+
+  background-color: var(--Color-primary);
+
+
+  
+
+  img {
+    width: clamp(200px, 95vw, 500px);
+    padding: 20px;
+  }
+ 
+}
+
 body {
   background-color: var(--Color-primary);
   color: var(--Color-white);
   font-family: "Inter", sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .toast {
-    width: 100px;
-    height: 30px;
+  width: 100px;
+  height: 30px;
+}
+
+.gradient {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: radial-gradient(at 300px 300px, #8fbc8f 0, #002423 70%);
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: var(--Color-secundary);
+border: 3px solid var(--Color-primary);
+border-radius: 10px;
+}
+
+::before, ::after {
+  box-sizing: inherit;
 }
