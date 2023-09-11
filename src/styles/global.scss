@@ -37,6 +37,7 @@ body {
   font-family: "Inter", sans-serif;
   background-repeat: no-repeat;
   background-size: cover;
+  overflow-x: hidden;
 }
 
 .toast {
@@ -62,6 +63,8 @@ background-color: var(--Color-secundary);
 border: 3px solid var(--Color-primary);
 border-radius: 10px;
 }
+
+
 
 ::before, ::after {
   box-sizing: inherit;

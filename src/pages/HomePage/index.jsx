@@ -1,4 +1,4 @@
-import LogoOpen from "../../assets/logo.png";
+// import LogoOpen from "../../assets/logo.png";
 import { useEffect } from "react";
 import { Header } from "../../componets/Header";
 import styles from "./style.module.scss";
@@ -68,7 +68,7 @@ export const HomePage = () => {
         </div>
         <main className={styles.main}>
           <div className={styles.allContainers}>
-            <section className={styles.containerInitial}>
+            <section className={styles.containerInitial} id="home">
               <div className={styles.contents}>
                 <p className="secundaryColor">{i18n.t("titles.hi")}</p>
                 <h1 className="title1">Conrado Augusto</h1>
@@ -76,7 +76,7 @@ export const HomePage = () => {
               </div>
             </section>
 
-            <section className={styles.containerAbout}>
+            <section className={styles.containerAbout} id="about">
               <h1 className={styles.aboutMe}>{i18n.t("messages.aboutMe")}</h1>
               <p className={styles.paragramAboutMe}>
                 {i18n.t("messages.paragraphAbout")}
@@ -106,7 +106,7 @@ export const HomePage = () => {
               </ul>
             </section>
 
-            <section className={styles.containerProjects}>
+            <section className={styles.containerProjects} id="projects">
               <h1>{i18n.t("messages.projects")}</h1>
               <ul className={styles.containerList}>
                 <li className={styles.listProject}>

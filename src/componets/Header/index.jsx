@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from "./style.module.scss";
 import logo from "../../assets/logo.png";
 import pt from "../../assets/pt.jpg";
@@ -13,8 +12,13 @@ export const Header = () => {
   const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
   const handleSelectChange = (country) => {
     localStorage.setItem(I18N_STORAGE_KEY, country);
-    window.location = window.location;
+    window.location.reload();
   };
+
+  const animatedScroll = () => {
+    window.location.reload();
+  }
+
 
   return (
     <header className={styles.header}>
@@ -22,20 +26,27 @@ export const Header = () => {
         <img className={styles.logo} src={logo} alt="" />
       </div>
       <nav>
-        <Link to={"/"}>
-          <span className="secundaryColor">//</span>
-          {i18n.t("menu.home")}
-        </Link>
+        <li>
+          <a onClick={() => animatedScroll()} href="#home">
+            <span className="secundaryColor">//</span>
+            {i18n.t("menu.home")}
+          </a>
+        </li>
 
-        <Link to={"#"}>
-          <span className="secundaryColor">//</span>
-          {i18n.t("menu.aboutMe")}
-        </Link>
+        <li>
+          <a onClick={() => animatedScroll()} href="#about">
+            <span className="secundaryColor">//</span>
+            {i18n.t("menu.aboutMe")}
+          </a>
+        </li>
 
-        <Link to={"#"}>
-          <span className="secundaryColor">//</span>
-          {i18n.t("menu.projects")}
-        </Link>
+        <li>
+          <a onClick={() => animatedScroll()} href="#projects">
+            <span className="secundaryColor">//</span>
+            {i18n.t("menu.projects")}
+          </a>
+        </li>
+
         <li>
           <a href="mailto:conras.augusto@gmail.com?subject=Vamos trabalhar juntos?">
             <span className="secundaryColor">//</span>

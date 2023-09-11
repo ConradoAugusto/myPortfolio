@@ -17,24 +17,30 @@
         justify-content: center;
         -webkit-box-align: center;
         flex-direction: column;
-        min-height: 75vh;
-        height: 75vh;
+        height: 92vh;
         padding: 0px;
         margin: 0px auto;
         transition: all;
-        
+
         .contents {
-          p{
-            transition-delay: 100ms;
+          p {
+            animation-name: opacity;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: inherit;
           }
           h1 {
-            transition-delay: 200ms;
-
+            animation-name: opacity;
+            animation-duration: 0.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: inherit;
           }
           h2 {
-            transition-delay: 300ms;
+            animation-name: opacity;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: inherit;
           }
-
         }
       }
 
@@ -44,11 +50,16 @@
         justify-content: center;
         -webkit-box-align: center;
         flex-direction: column;
-        min-height: 75vh;
-        height: 75vh;;
+        height: 92vh;
         padding: 0px;
         margin: 0px auto;
+        margin-bottom: 62px;
         gap: 40px;
+
+        animation-name: left;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: inherit;
 
         .aboutMe {
           margin-bottom: 20px;
@@ -179,11 +190,17 @@
       padding: 0px;
       margin: 0px auto;
 
+      animation-name: right;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: inherit;
+
       h1 {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 40px;
+
       }
 
       .containerList {
@@ -206,9 +223,10 @@
           display: flex;
           flex-direction: column;
           justify-content: center;
+          align-items: center;
           width: 100%;
-          max-width: 500px;
-          max-height: 250px;
+          max-width: 400px;
+          max-height: 150px;
           border-radius: 45px;
 
           &:hover .banner {
@@ -220,9 +238,9 @@
           }
 
           &:hover .titleProject {
-            opacity: 100%;
+            opacity: 100;
             transition: 0.5s;
-            margin-top: 21.375rem;
+            margin-bottom: -40px;
           }
 
           .titleProject {
@@ -231,8 +249,7 @@
             color: var(--Color-secundary);
             font-size: clamp(10px, 5vw, 20px);
             position: absolute;
-            margin-top: 262px;
-            margin-left: 192px;
+            margin-top: 163px;
             z-index: 1;
             transition: 0.5s;
           }
@@ -240,8 +257,8 @@
           .banner {
             display: flex;
             align-items: center;
-            width: 500px;
-            height: 250px;
+            width: 300px;
+            height: 150px;
             object-fit: inherit;
             border-radius: 8px;
             transition: 0.5s;
@@ -257,6 +274,7 @@
     left: 40px;
     right: auto;
     z-index: 10;
+
     ul {
       display: flex;
       flex-direction: column;
@@ -264,6 +282,7 @@
       width: 30px;
 
       li {
+        animation: footer 2s ease;
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -314,10 +333,56 @@
       letter-spacing: 0.1em;
       -webkit-writing-mode: vertical-rl;
       writing-mode: vertical-rl;
+      animation: footer 2s ease;
     }
     .lineEmail {
       height: 10vh;
       border-left: 2px solid var(--Color-secundary);
     }
+  }
+}
+
+@keyframes opacity {
+  0% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 20, 0, 1);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes footer {
+  0% {
+    transform: translatey(100%);
+  }
+
+  100% {
+    transform: translatey(0);
+  }
+}
+
+
+@keyframes left {
+  0% {
+    transform: translatex(50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translatex(0);
+    opacity: 100%;
+  }
+}
+
+@keyframes right {
+  0% {
+    transform: translatex(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translatex(0);
+    opacity: 100%;
   }
 }
