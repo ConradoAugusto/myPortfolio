@@ -8,7 +8,8 @@ const messages = {
       messages: {
         aboutMe: "Sobre mim",
         paragraphAbout:
-          "No seu portfólio desenvolvedor web, o desenvolvedor front-end e designer gráfico francês, Charles Bruyerre, mostra um estilo único.",
+          "Um Front-End apaixonado pela área da tecnologia. Me encantava desmontar e montar computadores, por isso busquei fazer cursos como Técnico em hardware e iniciação em robótica para entender como as coisa funcionavam, me dediquei 5 anos nesta área. Sou designer gráfico e passei anos desenvolvendo e  criando artes gráficas. Hoje estudo programação web na Kenzie Academy Brasil.",
+
         techsUsed:
           " Aqui estão algumas tecnologias com as quais tenho trabalhado recentemente",
         projects: "Alguns Projetos Que Construi",
@@ -20,7 +21,7 @@ const messages = {
         aboutMe: "Sobre",
         projects: "Projetos",
         contact: "Contato",
-      }
+      },
     },
   },
 };

@@ -1,8 +1,10 @@
 .containerMaster {
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   .main {
-    margin: 0px auto;
+    margin: 0px -18px auto;
     width: 100%;
     max-width: 1600px;
     min-height: 100vh;
@@ -13,29 +15,43 @@
 
       .containerInitial {
         display: flex;
+        justify-content: center;
+        align-items: center;
+
         -webkit-box-pack: center;
         justify-content: center;
         -webkit-box-align: center;
         flex-direction: column;
+        margin-left: 35px;
         height: 92vh;
         padding: 0px;
-        margin: 0px auto;
-        transition: all;
+
+        @media (max-width: 654px) {
+          text-align: center;
+        }
 
         .contents {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
           p {
+            font-size: clamp(6px, 5vw, 16px);
             animation-name: opacity;
             animation-duration: 0.5s;
             animation-timing-function: ease-in-out;
             animation-iteration-count: inherit;
           }
           h1 {
+            font-size: clamp(40px, 5vw, 100px);
             animation-name: opacity;
             animation-duration: 0.5s;
             animation-timing-function: ease-in-out;
             animation-iteration-count: inherit;
           }
           h2 {
+            font-size: clamp(40px, 5vw, 100px);
             animation-name: opacity;
             animation-duration: 1.5s;
             animation-timing-function: ease-in-out;
@@ -52,7 +68,7 @@
         flex-direction: column;
         height: 92vh;
         padding: 0px;
-        margin: 0px auto;
+        // margin: 0px auto;
         margin-bottom: 62px;
         gap: 40px;
 
@@ -60,6 +76,9 @@
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: inherit;
+
+        @media (max-width: 654px) {
+        }
 
         .aboutMe {
           margin-bottom: 20px;
@@ -72,12 +91,20 @@
           text-align: center;
           margin-bottom: 20px;
           font-size: 30px;
-          margin: 0px auto;
+          margin: 0px 20vw;
           transition-delay: 100ms;
+          font-size: clamp(16px, 4vw, 20px);
+
+          @media (max-width: 320px) {
+            width: 70%;
+          }
         }
 
         h4 {
           margin: 0px auto;
+          text-align: center;
+          margin: 0px auto;
+          width: 60%;
         }
 
         .technology {
@@ -146,6 +173,14 @@
               transition: 0.5s;
               margin-left: -21px;
             }
+            @media (max-width: 320px) {
+              margin-right: -10px;
+
+              svg {
+                width: 40px;
+                height: 40px;
+              }
+            }
           }
 
           .html:hover {
@@ -195,12 +230,20 @@
       animation-timing-function: ease-in-out;
       animation-iteration-count: inherit;
 
+      @media (max-width: 768px) {
+        height: auto;
+      }
+
+      @media (min-width: 320px) and (max-width: 440px) {
+        margin-top: 100px;
+        margin-left: 28px;
+      }
+
       h1 {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 40px;
-
       }
 
       .containerList {
@@ -209,14 +252,18 @@
 
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: 50px;
-        width: 700px;
+        gap: 50px 10px;
+        width: 100%;
         align-items: center;
         justify-content: center;
         margin-bottom: 120px;
 
-        @media (max-width: 1620px) {
+        @media (max-width: 1000px) {
           grid-template-columns: 1fr 1fr;
+        }
+
+        @media (max-width: 768px) {
+          grid-template-columns: 1fr;
         }
 
         .containerBanner {
@@ -257,9 +304,9 @@
           .banner {
             display: flex;
             align-items: center;
-            width: 300px;
+            width: 250px;
             height: 150px;
-            object-fit: inherit;
+            object-fit: cover;
             border-radius: 8px;
             transition: 0.5s;
           }
@@ -274,6 +321,10 @@
     left: 40px;
     right: auto;
     z-index: 10;
+
+    @media (min-width: 320px) and (max-width: 768px) {
+      display: none;
+    }
 
     ul {
       display: flex;
@@ -303,6 +354,31 @@
         border-left: 2px solid var(--Color-secundary);
       }
     }
+
+    @media (max-width: 768px) {
+      display: flex;
+      width: auto;
+      position: relative;
+      margin-top: 2131px;
+      justify-content: center;
+      align-items: center;
+      right: 0;
+      z-index: 15;
+
+      ul {
+        flex-direction: row;
+        margin-bottom: 20px;
+      }
+      .lineSocial {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 653px) {
+    .social {
+      display: none;
+    }
   }
   .containerFooter {
     display: flex;
@@ -315,6 +391,26 @@
     z-index: 10;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      width: 30px;
+      position: relative;
+      margin-top: 2366px;
+      margin-bottom: -113px;
+      left: -47%;
+      rotate: -90deg;
+
+      h3 {
+        font-weight: 600;
+
+        margin: 0;
+        padding: 0;
+      }
+
+      .lineEmail {
+        display: none;
+      }
+    }
 
     h3 {
       display: flex;
@@ -329,7 +425,6 @@
 
       margin: 20px auto;
       padding: 10px;
-      line-height: var(--fz-lg);
       letter-spacing: 0.1em;
       -webkit-writing-mode: vertical-rl;
       writing-mode: vertical-rl;
@@ -361,7 +456,6 @@
     transform: translatey(0);
   }
 }
-
 
 @keyframes left {
   0% {

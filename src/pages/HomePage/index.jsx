@@ -5,6 +5,7 @@ import styles from "./style.module.scss";
 import { FaHtml5, FaCss3Alt, FaSass, FaReact } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
 import { vercel } from "../../services";
+import photo from "../../assets/photo.jpg";
 import nuKenzie from "../../assets/nu.jpg";
 import burguer from "../../assets/burguer.jpg";
 import hub from "../../assets/hub.jpg";
@@ -32,9 +33,6 @@ export const HomePage = () => {
 
   return (
     <>
-      {/* <div className="opening">
-        <img src={LogoOpen} alt="" />
-      </div> */}
       <Header />
       <div className={styles.containerMaster}>
         <div className={styles.social}>
@@ -107,8 +105,21 @@ export const HomePage = () => {
             </section>
 
             <section className={styles.containerProjects} id="projects">
-              <h1>{i18n.t("messages.projects")}</h1>
+              <h1 className="title three  center">{i18n.t("messages.projects")}</h1>
               <ul className={styles.containerList}>
+
+              <li className={styles.listProject}>
+                  <a
+                    href="https://fotografia-projeto.vercel.app/"
+                    target="blank"
+                  >
+                    <div className={styles.containerBanner}>
+                      <h1 className={styles.titleProject}>Photograph</h1>
+                      <img className={styles.banner} src={photo} alt="" />
+                    </div>
+                  </a>
+                </li>
+
                 <li className={styles.listProject}>
                   <a
                     href="https://kenzie-feed-team4-v1-1.vercel.app/"

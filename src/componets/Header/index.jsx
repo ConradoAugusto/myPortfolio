@@ -3,6 +3,7 @@ import logo from "../../assets/logo.png";
 import pt from "../../assets/pt.jpg";
 import en from "../../assets/en.jpg";
 import { useState } from "react";
+import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 import { i18n } from "../../translate/i18n";
 
@@ -21,6 +22,7 @@ export const Header = () => {
 
 
   return (
+    <>
     <header className={styles.header}>
       <div>
         <img className={styles.logo} src={logo} alt="" />
@@ -73,5 +75,6 @@ export const Header = () => {
         </button>
       </div>
     </header>
+  </>
   );
 };

@@ -8,7 +8,7 @@ const messages = {
       messages: {
         aboutMe: "About me",
         paragraphAbout:
-          "In his web developer portfolio, French front-end developer and graphic designer Charles Bruyerre showcases a unique style.",
+          "A Front-End passionate about technology. I loved disassembling and assembling computers, so I tried to take courses such as Hardware Technician and robotics initiation to understand how things worked. I dedicated 5 years to this area. I am a graphic designer and have spent years developing and creating graphic arts. Today I study web programming at Kenzie Academy Brasil.",
         techsUsed:
           " Here are some technologies I've been working with recently",
         projects: "Some Projects I've Built",
