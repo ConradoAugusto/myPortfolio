@@ -1,80 +1,90 @@
 import styles from "./style.module.scss";
 import logo from "../../assets/logo.png";
-import pt from "../../assets/pt.jpg";
-import en from "../../assets/en.jpg";
-import { useState } from "react";
-import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-import { i18n } from "../../translate/i18n";
+const EMAIL = "conras.augusto@gmail.com";
 
 export const Header = () => {
-  const I18N_STORAGE_KEY = "i18nextLng";
+  const { t, i18n } = useTranslation();
+  const progress = useRef(null);
+  const [scrolled, setScrolled] = useState(false);
+  const lang = i18n.resolvedLanguage;
 
-  const [language] = useState(localStorage.getItem(I18N_STORAGE_KEY));
-  const handleSelectChange = (country) => {
-    localStorage.setItem(I18N_STORAGE_KEY, country);
-    window.location.reload();
-  };
+  useEffect(() => {
+    document.documentElement.lang = lang === "en" ? "en" : "pt-BR";
+  }, [lang]);
 
-  const animatedScroll = () => {
-    window.location.reload();
-  }
-
+  useEffect(() => {
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      if (progress.current) progress.current.style.transform = `scaleX(${ratio})`;
+      setScrolled(window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <>
-    <header className={styles.header}>
-      <div>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
+      <span ref={progress} className={styles.progress} aria-hidden="true" />
+
+      <a href="#home" className={styles.brand} aria-label="Conrado Augusto — início">
         <img className={styles.logo} src={logo} alt="" />
-      </div>
-      <nav>
-        <li>
-          <a onClick={() => animatedScroll()} href="#home">
-            <span className="secundaryColor">//</span>
-            {i18n.t("menu.home")}
-          </a>
-        </li>
+        <span className={styles.brandName}>
+          Conrado<em>Augusto</em>
+        </span>
+      </a>
 
-        <li>
-          <a onClick={() => animatedScroll()} href="#about">
-            <span className="secundaryColor">//</span>
-            {i18n.t("menu.aboutMe")}
-          </a>
-        </li>
-
-        <li>
-          <a onClick={() => animatedScroll()} href="#projects">
-            <span className="secundaryColor">//</span>
-            {i18n.t("menu.projects")}
-          </a>
-        </li>
-
-        <li>
-          <a href="mailto:conras.augusto@gmail.com?subject=Vamos trabalhar juntos?">
-            <span className="secundaryColor">//</span>
-            {i18n.t("menu.contact")}
-          </a>
-        </li>
+      <nav className={styles.nav} aria-label="Principal">
+        <a href="#work">
+          <span>01</span>
+          {t("menu.work")}
+        </a>
+        <a href="#about">
+          <span>02</span>
+          {t("menu.about")}
+        </a>
+        <a href="#skills">
+          <span>03</span>
+          {t("menu.skills")}
+        </a>
+        <a href="#contact">
+          <span>04</span>
+          {t("menu.contact")}
+        </a>
       </nav>
 
-      <div className={styles.flags}>
-        <button type="button" onClick={() => handleSelectChange("pt-BR")}>
-          {language === "pt-BR" ? (
-            <img className={styles.flag} src={pt} alt="" />
-          ) : (
-            <img className={styles.disabled} src={pt} alt="" />
-          )}
-        </button>
+      <div className={styles.actions}>
+        <div className={styles.lang} role="group" aria-label="Idioma / Language">
+          <button
+            type="button"
+            className={lang === "pt" ? styles.active : ""}
+            aria-pressed={lang === "pt"}
+            onClick={() => i18n.changeLanguage("pt")}
+          >
+            PT
+          </button>
+          <button
+            type="button"
+            className={lang === "en" ? styles.active : ""}
+            aria-pressed={lang === "en"}
+            onClick={() => i18n.changeLanguage("en")}
+          >
+            EN
+          </button>
+        </div>
 
-        <button type="button" onClick={() => handleSelectChange("en-US")}>
-          {language === "en-US" ? (
-            <img className={styles.flag} src={en} alt="" />
-          ) : (
-            <img className={styles.disabled} src={en} alt="" />
-          )}
-        </button>
+        <a
+          className={styles.cta}
+          href={`mailto:${EMAIL}?subject=${encodeURIComponent(t("contact.mail"))}`}
+          data-magnetic
+        >
+          {t("menu.cta")}
+        </a>
       </div>
     </header>
-  </>
   );
 };

@@ -1,0 +1,52 @@
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  pointer-events: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--ink);
+    transform: translate(-50%, -50%);
+    transition: width 0.45s var(--ease-out), height 0.45s var(--ease-out),
+      background-color 0.3s ease, opacity 0.3s ease;
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0;
+    color: #fff;
+    font: 600 13px var(--font-sans);
+    white-space: nowrap;
+    transition: opacity 0.3s ease, transform 0.45s var(--ease-out);
+  }
+
+  &.hover::before {
+    width: 44px;
+    height: 44px;
+    background: var(--accent);
+    opacity: 0.25;
+  }
+
+  &.labeled::before {
+    width: 88px;
+    height: 88px;
+    background: var(--ink);
+    opacity: 1;
+  }
+
+  &.labeled span {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
