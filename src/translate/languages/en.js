@@ -20,7 +20,10 @@ const messages = {
         ctaSecondary: "Get in touch",
         location: "Piracicaba, Brazil — remote or hybrid",
         scroll: "Scroll",
-        badge: "FRONT-END · UX/UI · AVAILABLE · ",
+        badge: "AVAILABLE · DEVELOPER · ",
+        cardLine1: "Interfaces that",
+        cardLine2: "make sense.",
+        code: { role: "role" },
       },
       stats: [
         { value: "2008", label: "working with visuals since" },

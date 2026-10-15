@@ -6,7 +6,7 @@ import { FiArrowUpRight, FiArrowDown, FiCopy } from "react-icons/fi";
 import { Header } from "../../componets/Header";
 import { Cursor } from "../../componets/Cursor";
 import styles from "./style.module.scss";
-import me from "../../assets/me.png";
+import me from "../../assets/me.jpg";
 import photo from "../../assets/photo.jpg";
 import website from "../../assets/website.png";
 import rolesVeganos from "../../assets/rolesveganos.png";
@@ -144,22 +144,43 @@ export const HomePage = () => {
           </div>
 
           <div className={styles.heroVisual}>
-            <div className={styles.portrait} data-cursor="Hi!">
+            <span className={styles.orbit} aria-hidden="true" />
+            <span className={styles.orbitDashed} aria-hidden="true" />
+
+            <div className={styles.blob} data-cursor="Hi!">
               <img src={me} alt="Conrado Augusto" />
+              <div className={styles.blobContent}>
+                <pre className={styles.code} aria-hidden="true">
+                  <code>
+                    <span className={styles.kw}>const</span> dev = {"{"}
+                    {"\n  "}{t("hero.code.role")}: <span className={styles.str}>'Dev'</span>,
+                    {"\n  "}stack: <span className={styles.str}>'React+TS'</span>,
+                    {"\n  "}extra: <span className={styles.str}>'UX/UI'</span>
+                    {"\n};"}
+                  </code>
+                </pre>
+                <p className={styles.blobTitle}>
+                  {t("hero.cardLine1")}
+                  <br />
+                  {t("hero.cardLine2")}
+                </p>
+              </div>
             </div>
 
             <svg className={styles.badge} viewBox="0 0 200 200" aria-hidden="true">
               <defs>
-                <path id="circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+                <path id="circle" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
               </defs>
               <text>
-                <textPath href="#circle">{t("hero.badge").repeat(2)}</textPath>
+                <textPath href="#circle" textLength="462" lengthAdjust="spacing">
+                  {t("hero.badge")}
+                </textPath>
               </text>
             </svg>
             <span className={styles.badgeCore} aria-hidden="true">✦</span>
 
-            <span className={`${styles.chip} ${styles.chip1}`}>UX/UI</span>
-            <span className={`${styles.chip} ${styles.chip2}`}>Marketing</span>
+            <span className={`${styles.chip} ${styles.chip1}`}>React</span>
+            <span className={`${styles.chip} ${styles.chip2}`}>TypeScript</span>
             <span className={`${styles.chip} ${styles.chip3}`}>{"</> Front-End"}</span>
           </div>
 

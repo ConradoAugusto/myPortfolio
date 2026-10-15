@@ -20,7 +20,10 @@ const messages = {
         ctaSecondary: "Falar comigo",
         location: "Piracicaba, SP — remoto ou híbrido",
         scroll: "Role",
-        badge: "FRONT-END · UX/UI · DISPONÍVEL · ",
+        badge: "DISPONÍVEL · DESENVOLVEDOR · ",
+        cardLine1: "Interfaces que",
+        cardLine2: "fazem sentido.",
+        code: { role: "cargo" },
       },
       stats: [
         { value: "2008", label: "trabalhando com imagem desde" },
