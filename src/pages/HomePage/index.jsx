@@ -6,7 +6,6 @@ import { FiArrowUpRight, FiArrowDown, FiCopy } from "react-icons/fi";
 import { Header } from "../../componets/Header";
 import { Cursor } from "../../componets/Cursor";
 import styles from "./style.module.scss";
-import me from "../../assets/me.jpg";
 import photo from "../../assets/photo.jpg";
 import website from "../../assets/website.png";
 import rolesVeganos from "../../assets/rolesveganos.png";
@@ -147,8 +146,8 @@ export const HomePage = () => {
             <span className={styles.orbit} aria-hidden="true" />
             <span className={styles.orbitDashed} aria-hidden="true" />
 
-            <div className={styles.blob} data-cursor="Hi!">
-              <img src={me} alt="Conrado Augusto" />
+            <div className={styles.blob} onMouseMove={tilt} onMouseLeave={untilt}>
+              <div className={styles.caseGlow} aria-hidden="true" />
               <div className={styles.blobContent}>
                 <pre className={styles.code} aria-hidden="true">
                   <code>
