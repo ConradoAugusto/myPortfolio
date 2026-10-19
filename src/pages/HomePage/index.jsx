@@ -9,6 +9,7 @@ import styles from "./style.module.scss";
 import photo from "../../assets/photo.jpg";
 import website from "../../assets/website.png";
 import rolesVeganos from "../../assets/rolesveganos.png";
+import analista from "../../assets/analista.png";
 
 const EMAIL = "conras.augusto@gmail.com";
 
@@ -21,6 +22,7 @@ const SOCIALS = [
 const PROJECTS = [
   { key: "rolesVeganos", img: rolesVeganos, url: "https://rolesveganos.vercel.app/", tags: ["React", "Vite", "React Router", "Supabase", "Leaflet", "OpenStreetMap"] },
   { key: "website", img: website, url: "https://web-site-theta-three.vercel.app/", tags: ["React", "Vite", "React Router", "Bootstrap", "CSS Modules", "React Slick", "CountUp.js", "Lucide Icons", "jQuery", "Odometer.js"] },
+  { key: "analista", img: analista, url: "https://analista-marketing.vercel.app/", tags: ["React", "Vite", "Bootstrap", "Recharts", "Gemini API"] },
   { key: "photo", img: photo, url: "https://fotografia-alpha.vercel.app/", tags: ["React", "Vite", "React Router", "CSS Modules"] },
 ];
 
@@ -298,7 +300,7 @@ export const HomePage = () => {
           </div>
           <ul className={styles.projects}>
             {PROJECTS.map((p, i) => (
-              <li key={p.key} data-reveal style={{ "--d": `${(i % 3) * 90}ms` }}>
+              <li key={p.key} data-reveal style={{ "--d": `${(i % 2) * 90}ms` }}>
                 <a
                   href={p.url}
                   target="_blank"

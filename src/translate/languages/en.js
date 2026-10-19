@@ -104,6 +104,7 @@ const messages = {
         items: {
           rolesVeganos: { title: "Rolês Veganos", text: "Guide to vegan restaurants, cafés and shops with a map, reviews and city search." },
           website: { title: "Corporate Website", text: "Website for an HR & ERP consultancy, from layout to deploy." },
+          analista: { title: "Marketing Dashboard", text: "Marketing dashboard with blog, Instagram and LinkedIn metrics, an editorial calendar and AI-powered insights." },
           photo: { title: "Photograph", text: "Portfolio of my photography work." },
         },
       },

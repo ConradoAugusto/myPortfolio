@@ -104,6 +104,7 @@ const messages = {
         items: {
           rolesVeganos: { title: "Rolês Veganos", text: "Guia de restaurantes, cafés e lojas veganas com mapa, avaliações e busca por cidade." },
           website: { title: "Site Institucional", text: "Site de uma consultoria de RH e ERP, do layout ao deploy." },
+          analista: { title: "Painel de Marketing", text: "Dashboard de marketing com métricas de blog, Instagram e LinkedIn, calendário editorial e análises com IA." },
           photo: { title: "Photograph", text: "Portfólio do meu trabalho como fotógrafo." },
         },
       },
