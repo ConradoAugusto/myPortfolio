@@ -13,7 +13,7 @@ const messages = {
         eyebrow: "Front-End · UX/UI · Marketing",
         line1: "Interfaces",
         line2: "que",
-        words: ["funcionam.", "convertem.", "fazem sentido."],
+        words: ["funcionam.", "convertem.", "encantam.", "vendem."],
         lead:
           "Sou Conrado Augusto, Desenvolvedor Front-End com olhar de UX. Construo interfaces responsivas e integradas a APIs para produtos SaaS — e entendo de marketing o suficiente para fazer a tela vender.",
         ctaPrimary: "Ver trabalhos",

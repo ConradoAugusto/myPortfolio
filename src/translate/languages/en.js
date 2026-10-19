@@ -13,7 +13,7 @@ const messages = {
         eyebrow: "Front-End · UX/UI · Marketing",
         line1: "Interfaces",
         line2: "that",
-        words: ["work.", "convert.", "make sense."],
+        words: ["work.", "convert.", "engage.", "sell."],
         lead:
           "I'm Conrado Augusto, a Front-End Developer with a UX eye. I build responsive, API-driven interfaces for SaaS products — and know enough marketing to make the screen sell.",
         ctaPrimary: "See my work",
